@@ -1,0 +1,23 @@
+<div class="text-center">
+    <p>Add New Patient</p>
+</div>
+<div mat-dialog-content>
+  <mat-form-field class="w-100">
+    <input matInput [(ngModel)] = 'patient.name' placeholder="Name">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <input matInput [(ngModel)] = 'patient.mobileNumber' placeholder="Mobile">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <input matInput [(ngModel)] = 'patient.gender' placeholder="Gender">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <input matInput [(ngModel)] = 'patient.address' placeholder="Address">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="save(patient)" cdkFocusInitial>Save</button>
+</div>
+
+
