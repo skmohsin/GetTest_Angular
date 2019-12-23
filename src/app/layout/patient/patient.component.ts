@@ -6,7 +6,6 @@ import { MatTableDataSource, MatDialog } from '@angular/material';
 import { PatientDialog } from "./dialog/patient.dialog";
 import { ConfirmDialogComponent, ConfirmDialogModel } from "./dialog/confirm.patient.dialog";
 
-
 @Component({
   selector: "app-Patient",
   templateUrl: "./patient.component.html",
@@ -17,8 +16,6 @@ export class PatientComponent implements OnInit {
   patients: IPatient[];
   displayedColumns = ['Name', 'Mobile Number', 'Gender', 'Address','Action'];
   dataSource : any;
-
-
 
   constructor(private patientService: PatientService, public dialog: MatDialog) {}
 
@@ -36,7 +33,6 @@ export class PatientComponent implements OnInit {
     })
   }
 
-
   openDialog(patient): void {
     const dialogRef = this.dialog.open(PatientDialog, {
       width: '350px',
@@ -50,7 +46,7 @@ export class PatientComponent implements OnInit {
     });
   }
 
-  confirmDialog(): void {
+  confirmDialog(patient) : any {
     const message = `Are you sure you want to do this?`;
     const dialogData = new ConfirmDialogModel("Confirm Action", message);
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
@@ -59,15 +55,18 @@ export class PatientComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(dialogResult => {
-
+      console.log(dialogResult);
+      if (dialogResult) {
+        this.patientService.deletePatient(patient).subscribe(
+          (response: ResponseWrapper) => {
+            console.log(response);
+            this.getPatients();
+          },
+          error => {
+            console.log(error);
+          }
+        );
+      }
     });
   }
 }
-
-
-
-
-
-
-
-

@@ -9,6 +9,6 @@ export class AuthenticationService {
   constructor(private api: Api) { }
 
   authenticate(user : any) {
-    return this.api.post('token', user);
+    return this.api.post(`token`, user);
   }
 }

@@ -8,6 +8,6 @@ export class UserService {
   constructor(private api: Api) { }
 
   getUsers = () => {
-    return this.api.get('users');
+    return this.api.get(`users`);
   }
 }

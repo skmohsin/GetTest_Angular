@@ -1,4 +1,4 @@
-# SB Admin rewritten in Angular7 and Material2
+# SB Admin rewritten in Angular7 and Material2 with .Net core web api in backend
 
 Simple Dashboard Admin App built using Angular 7 and Material 2.
 
