@@ -23,6 +23,10 @@ const routes: Routes = [
             {
               path: 'patient',
               loadChildren: './patient/patient.module#PatientModule'
+            },
+            {
+              path: 'test',
+              loadChildren: './test/test.module#TestModule'
             }
         ]
     }

@@ -8,7 +8,8 @@
         "gitbuild": "ng build --prod --base-href /start-javascript/sb-admin-material/master/dist/",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "compodoc": "compodoc -p tsconfig.json"
     },
     "private": true,
     "dependencies": {
@@ -39,6 +40,7 @@
         "@angular/cli": "7.0.6",
         "@angular/compiler-cli": "7.1.0",
         "@angular/language-service": "7.1.0",
+        "@compodoc/compodoc": "^1.1.11",
         "@types/jasmine": "3.3.0",
         "@types/jasminewd2": "2.0.6",
         "@types/node": "10.12.10",

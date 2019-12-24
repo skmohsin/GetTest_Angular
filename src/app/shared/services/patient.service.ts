@@ -10,6 +10,10 @@ export class PatientService {
     return this.api.get(`patients`);
   };
 
+  getPatientTests = patientID => {
+    return this.api.get(`patient/${patientID}`);
+  };
+
   postPatient = patient => {
     return this.api.post(`patient`, patient);
   };

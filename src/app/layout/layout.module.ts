@@ -28,7 +28,7 @@ import { LayoutComponent } from './layout.component';
         MatListModule,
         TranslateModule
     ],
-    declarations: [LayoutComponent,  TopnavComponent, SidebarComponent, ]
+    declarations: [LayoutComponent,  TopnavComponent, SidebarComponent]
 
 })
 export class LayoutModule { }
